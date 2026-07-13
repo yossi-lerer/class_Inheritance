@@ -129,5 +129,31 @@ usain = Sprinter("Usain")
 print(usain.has_record())
 print(usain.set_record(10.8))
 print(usain.has_record())
-
-        
+# step 8 - Training Session Counter
+class Athlete:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.sessions_completed = 0
+    def train(self):
+        self.sessions_completed += 1
+        return self.sessions_completed
+    def sessions_needed(self, target):
+        if target - self.sessions_completed >= 0:
+            return target - self.sessions_completed
+        else:
+            return 0
+class Triathlete(Athlete):
+    def __init__(self, name, age, discipline):
+        super().__init__(name, age)
+        self.discipline = discipline
+    def describe(self):
+        print(f"Triathlete {self.name}, age {self.age}, discipline: {self.discipline}")
+dan = Triathlete("Dan", 26, "cycling")
+dan.describe()
+print(dan.train(), " sessions completed")
+print(dan.train(), " sessions completed")
+print(dan.train(), " sessions completed")
+print(dan.train(), " sessions completed")
+print(dan.train(), " sessions completed")
+print(dan.sessions_needed(10), " more needed")
