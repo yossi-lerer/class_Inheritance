@@ -157,3 +157,24 @@ print(dan.train(), " sessions completed")
 print(dan.train(), " sessions completed")
 print(dan.train(), " sessions completed")
 print(dan.sessions_needed(10), " more needed")
+# step 9 - Basketball Player Card
+class Athlete:
+    def __init__(self, name, age, position):
+        self.name = name
+        self.age = age
+        self.position = position
+    def player_card(self):
+        print(f"player card: \nname: {self.name} \nage: {self.age} \nposition: {self.position}")
+class BasketballPlayer(Athlete):
+    def __init__(self, name, age, position, jersey_number):
+        super().__init__(name, age, position)
+        self.jersey_number = jersey_number
+    def full_profile(self):
+        self.player_card()
+        print(f"Jersey: #{self.jersey_number}")
+mia = BasketballPlayer("Mia", 24, "guard", 7)
+mia.full_profile()
+mosh = BasketballPlayer("Mosh", 15, "gk", 6)
+mosh.full_profile()
+ori = BasketballPlayer("ori", 19, "cmd", 8)
+ori.full_profile()
