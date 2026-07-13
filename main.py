@@ -43,3 +43,29 @@ class Cyclist(Athlete):
 mike = Cyclist("Mike", 30, "Trek")
 mike.introduce()
 mike.describe_gear()
+# step 4 - Three Sports, One Parent
+class Athlete:
+    def __init__(self, name, country):
+        self.name = name
+        self.country = country 
+    def greet(self):
+        return f"{self.name} represents {self.country}."
+class Swimmer(Athlete):
+    def __init__(self, name, country, stroke_style):
+        super().__init__(name, country)
+        self.stroke_style = stroke_style
+class Runner(Athlete):
+    def __init__(self, name, country, best_distance):
+        super().__init__(name, country)
+        self.best_distance = best_distance
+class Cyclist(Athlete):
+    def __init__(self, name, country, race_type):
+        super().__init__(name, country,)
+        self.race_type = race_type
+
+lior = Swimmer("Lior", "Israel", "freestyle")
+avi = Runner("Avi", "Kenya", "marathon") 
+jan = Cyclist("Jan", "France", "road")
+print(lior.greet())        
+print(avi.greet())        
+print(jan.greet())        
