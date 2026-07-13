@@ -94,3 +94,20 @@ print(ana.warm_up())
 ana.compete()
 print(ben.warm_up())
 ben.compete()
+# step 6 - Constructor Chaining with super()
+class Athlete:
+    def __init__(self, name, age, years_active):
+        self.name = name
+        self.age = age
+        self.years_active = years_active
+    def experience(self):
+        return f"{self.name} has been active for {self.years_active} years."
+class TeamSportPlayer(Athlete):
+    def __init__(self, name, age, years_active, team_name):
+        super().__init__(name, age, years_active)
+        self.team_name = team_name
+    def team_info(self):
+        print(f"{self.name} plays for {self.team_name}.")
+gal = TeamSportPlayer("Gal", 28, 10, "Maccabi")
+print(gal.experience())
+gal.team_info()
