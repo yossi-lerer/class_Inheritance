@@ -212,3 +212,10 @@ class Logger:
 test1 = Logger()
 test2 = Logger()
 print(test1 is test2)
+# step 2
+class AppSettings:
+    theme = "dark"
+app1  = AppSettings()
+app1.theme = "white"
+app2  = AppSettings()
+print(app2.theme)
