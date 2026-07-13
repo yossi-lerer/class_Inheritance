@@ -119,15 +119,15 @@ class Athlete:
         self.personal_best = None
     def set_record(self, value):
         self.personal_best = value
+        return self.personal_best
     def has_record(self):
         return  self.personal_best != None
 class Sprinter(Athlete):
     def __init__(self, name):
         super().__init__(name, "100m Sprint")
 usain = Sprinter("Usain") 
-print(usain.__dict__)
 print(usain.has_record())
-usain.set_record(10.8)
+print(usain.set_record(10.8))
 print(usain.has_record())
 
         
