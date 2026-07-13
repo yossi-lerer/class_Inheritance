@@ -178,3 +178,26 @@ mosh = BasketballPlayer("Mosh", 15, "gk", 6)
 mosh.full_profile()
 ori = BasketballPlayer("ori", 19, "cmd", 8)
 ori.full_profile()
+# step 10 - Three-Level Inheritance Chain
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def greet(self):
+        print(f"Hi, I am {self.name}.")
+class Athlete(Person):
+    def __init__(self, name, age, sport):
+        super().__init__(name, age)
+        self.sport = sport
+    def train(self):
+        print(f"{self.name} is training for {self.sport}.")
+class ProfessionalAthlete(Athlete):
+    def __init__(self, name, age, sport, sponsor):
+        super().__init__(name, age, sport)
+        self.sponsor = sponsor
+    def sponsor_info(self):
+        print(f"{self.name} is sponsored by {self.sponsor}.")
+ronaldo = ProfessionalAthlete("Ronaldo", 39, "football", "Nike")
+ronaldo.greet()
+ronaldo.train()
+ronaldo.sponsor_info()
