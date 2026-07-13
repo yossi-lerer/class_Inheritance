@@ -45,7 +45,7 @@ mike.introduce()
 mike.describe_gear()
 # step 4 - Three Sports, One Parent
 class Athlete:
-    def __init__(self, name, country):
+    def __init__(self, name, country, stroke = None):
         self.name = name
         self.country = country 
     def greet(self):
@@ -66,6 +66,31 @@ class Cyclist(Athlete):
 lior = Swimmer("Lior", "Israel", "freestyle")
 avi = Runner("Avi", "Kenya", "marathon") 
 jan = Cyclist("Jan", "France", "road")
-print(lior.greet())        
-print(avi.greet())        
-print(jan.greet())        
+print(lior.greet())
+print(avi.greet())
+print(jan.greet())
+# step 5 - Shared Warm-Up Method
+class Athlete:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def warm_up(self):
+        return f"{self.name} is warming up."
+class Gymnast(Athlete):
+    def __init__(self, name, age, apparatus):
+        super().__init__(name, age)
+        self.apparatus = apparatus
+    def compete(self):
+        print(f"{self.name} competes on the {self.apparatus}")
+class Swimmer(Athlete):
+    def __init__(self, name, age, stroke):
+        super().__init__(name, age)
+        self.stroke = stroke
+    def compete(self):
+        print(f"{self.name} competes on the {self.stroke}")
+ana = Gymnast("Ana", 19, "rings")
+ben = Swimmer("Ben", 21, "butterfly")
+print(ana.warm_up())
+ana.compete()
+print(ben.warm_up())
+ben.compete()
