@@ -201,3 +201,31 @@ ronaldo = ProfessionalAthlete("Ronaldo", 39, "football", "Nike")
 ronaldo.greet()
 ronaldo.train()
 ronaldo.sponsor_info()
+# self learn
+# step 1 
+class Logger:
+    instance = None
+    def __new__(cls):
+        if cls.instance is None:
+            cls.instance = super().__new__(cls)
+        return cls.instance
+test1 = Logger()
+test2 = Logger()
+print(test1 is test2)
+# step 2
+class AppSettings:
+    theme = "dark"
+app1  = AppSettings()
+app1.theme = "white"
+app2  = AppSettings()
+print(app2.theme)
+# step 3
+class Counter:
+    count = None
+    def __new__(cls):
+        if cls.count is None:
+            cls.count = super().__new__(cls)
+        return cls.count
+count1 = Counter()
+print(count1.count.__dict__)
+count2 = Counter()
